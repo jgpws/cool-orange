@@ -1,0 +1,507 @@
+/*
+Theme Name: Cool Orange
+Description: Cool Orange is a Sandbox child theme with a cool, muted blue vs. bright orange color scheme. It includes a Settings API based Theme Options page where blog owners can upload a logo to the Media Library. This method replaces the standard heading with a logo image, but leaves the actual h1 tag in place to be read by the search engines. No need to mess with CSS!
+Author: Jason Gonzalez
+Author URI: http://www.jgpws.com/portfolio
+Template: sandbox
+Tags: blue, orange, two-columns, left-sidebar, sandbox skin, theme options
+Version: 0.3
+.
+This work is released under the GNU General Public License 2:
+http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+.
+*/
+/* Import Sandbox's style sheet */
+@import url('../sandbox/style.css');
+
+/* Apply a basic layout- 2 column left */
+@import url('../sandbox/examples/2c-l.css');
+
+/* General tags */
+body {
+margin: 0;
+padding: 0;
+color: #333333;
+background-color: #BCC7D0;
+background: url(images/wood_pattern01_golden.jpg) fixed;
+font: 1em Arial, Helvetica, FreeSans/*Linux*/, sans-serif;
+line-height: 1.4em;
+}
+
+a:visited {
+color: #8C98A1;
+text-decoration: underline;
+}
+
+a:link {
+color: #6D7479;
+text-decoration: underline;
+}
+
+a:hover, a strong:hover {
+color: #2D4F69;
+text-decoration: underline;
+}
+
+h1, h2 {
+color: #8C98A1;
+}
+
+h3, h4, h5, h6 {
+color: #2D4F69;
+}
+
+pre {
+line-height: 1em;
+padding: 1em;
+color: #666666;
+background-color: #FFEFDB;
+border: 2px inset #8C98A1;
+overflow: auto;
+}
+
+b, strong {
+color: #8C98A1;
+}
+
+blockquote {
+background-color: #BBB3A8;
+padding: 1em;
+text-align: justify;
+text-indent: 0;
+}
+
+table {
+margin: 1em auto 1em auto;
+border: 1px solid #8C98A1;
+}
+
+table caption {
+font-family: "Times New Roman", Times, FreeSerif/*Linux*/, serif;
+font-variant: small-caps;
+font-weight: bold;
+color: #A37B46;
+}
+
+table th {
+color: #2D4F69;
+}
+
+table th, table td {
+padding: 0.5em;
+border: 1px solid #8C98A1;
+}
+
+hr {
+border-top: 2px solid #8C98A1;
+width: 50%;
+height: 2px;
+margin: 0 auto 1em auto;
+}
+
+dl dd {
+font-style: italic;
+}
+
+cite {
+font-size: 0.8em;
+}
+
+/* Layout tags and adjustments */
+#wrapper {
+width: 960px;
+margin-left: auto;
+margin-right: auto;
+border: 3px solid #8C98A1;
+background-color: #FAEBD7;
+/* faux columns */
+background: url('images/containerbg_02.gif') repeat-y;
+}
+
+#header {
+background: url('images/header_bg.jpg') #BCC7D0;
+border-bottom: 1px solid #8C98A1;
+}
+
+#header h1 {
+margin: 0 4em 0.2em 4em;
+}
+
+/*#logo {
+padding: 1em 2em 0 2em;
+}*/
+
+/*#logo #blog-title a {
+display: block;
+text-indent: -2000px;
+}*/
+
+/*#logo #blog-description {
+text-indent: -2000px;
+}*/
+
+#blog-title, #blog-description {
+font-family: "Times New Roman", Times, FreeSerif, serif;
+font-variant: small-caps;
+text-align: center;
+}
+
+#blog-title {
+font-size: 2.5em;
+}
+
+#blog-description {
+color: #2D4F69;
+font-weight: bold;
+}
+
+#blog-title a:visited, #blog-title a:link {
+color: #A37B46;
+text-decoration: none;
+}
+
+#blog-title a:hover {
+color: #6A4617;
+text-decoration: none;
+}
+
+div#access {
+position: relative;
+width: 100%;
+height: 2.55em;
+background-color: #BCC7D0;
+}
+
+div#menu {
+float: left;
+background-color: transparent;
+font-family: "Times New Roman", Times, FreeSerif, serif;
+font-variant: small-caps;
+font-weight: bold;
+margin: 1em 0 1px 1em;
+}
+
+div#menu ul li {
+background-color: #FFFFFF;
+border-top: 1px solid #DBE2E8;
+border-left: 1px solid #DBE2E8;
+border-right: 1px solid #8C98A1;
+border-bottom: 1px solid #DBE2E8;
+}
+
+div#menu ul li ul li {
+border-bottom: 1px solid #8C98A1;
+}
+
+div#menu a:link, div#menu a:visited {
+color: #A37B46;
+}
+
+div#menu a:hover, div#menu a:active {
+color: #2D4F69;
+}
+
+/* container adjustments*/
+div#container {
+width: 100%;
+margin: 0 0 0 -230px;
+float: right;
+border-top: 1px solid #8C98A1;
+}
+
+/* content */
+div#content {
+overflow: hidden;
+margin: 0 0 0 230px;
+padding-left: 2em;
+padding-right: 2em;
+}
+
+div#content p, .entry-content {
+text-indent: 1em;
+}
+
+/* Footer */
+div#footer {
+text-align: center;
+margin: 0 auto;
+padding: 1em 0 1em 0;
+background-color: #BCC7D0;
+border-top: 1px solid #8C98A1;
+}
+
+/* sidebars */
+#primary ul, #secondary ul {
+padding: 0 1em 0 1em;
+}
+
+div.sidebar {
+width: 225px;
+font-size: 0.7em;
+}
+
+div.sidebar ul ul li, div.sidebar ol ol li {
+font-weight: bold;
+}
+
+div.sidebar ul ul ul li, div.sidebar ol ol ol li {
+font-weight: normal;
+}
+
+div.sidebar table {
+font-size: 0.7em;
+}
+
+.sidebar h1, .sidebar h2, .sidebar h3, .sidebar h4, .sidebar h5, .sidebar h6 {
+font-family: "Times New Roman", Times, FreeSerif, serif;
+font-variant: small-caps;
+color: #A37B46;
+line-height: 1em;
+}
+
+.sidebar ul li a:visited, .sidebar ul li a:link {
+display: block;
+padding: 0.5em 1em 0.5em 0.5em;
+}
+
+.sidebar ul li a:hover {
+display: block;
+background-color: #FFFFFF;
+}
+
+#pages, #categories, #archives, #search, #linkcat-2, #rss-links, #meta {
+background: url(images/widget_bottom.png) no-repeat bottom left;
+padding-bottom: 10px;
+width: 200px;
+}
+
+#pages h3, #categories h3, #archives h3, #search h3, #linkcat-2 h3, #rss-links h3, #meta h3 {
+background: #FFFFFF url(images/widget_top.png) no-repeat top left;
+padding: 10px 10px 10px 10px;
+margin: 1em 5px -10px 0;
+width: 180px;
+}
+
+#pages ul, #categories ul, #archives ul, #search ul, #linkcat-2 ul, #rss-links ul, #meta ul, #searchform {
+background: url(images/widget_middle.png) repeat-y;
+padding: 0 1em 0 0;
+margin: 10px 0 0 0;
+line-height: 1.2em;
+}
+
+#pages ul li a {
+display: block;
+}
+
+#pages ul.children, #categories ul.children, #archives ul.children, #search ul.children, #linkcat-2 ul.children, #rss-links ul.children, #meta ul.children {
+background-image: none;
+padding: 0;
+}
+
+#searchform {
+text-align: center;
+padding-top: 1em;
+}
+
+#pages ul li, #categories ul li, #archives ul li, #search ul li, #linkcat-2 ul li, #rss-links ul li, #meta ul li {
+list-style-type: disc;
+color: #2D4F69;
+margin: 0 0 0 2em;
+}
+
+#pages ul li ul li, #categories ul li ul li {
+margin-top: -1em;
+padding: 0.5em 1em 0.5em 0.5em;
+color: #8C98A1;
+}
+
+#pages ul li ul li a, #categories ul li ul li a {
+line-height: 1.2em;
+}
+
+/* sidebar styling for add-on widgets */
+li.widget h3 {
+background: #FFFFFF url(images/widget_top.png) no-repeat top left;
+padding: 10px 10px 10px 10px;
+margin: 1em 5px 1em 0;
+width: 180px;
+}
+
+li.widget {
+background: url(images/widget_middle.png) repeat-y;
+padding: 0 1em 1em 0;
+margin: 1em 0 1em 0;
+line-height: 1.2em;
+}
+
+#tag_cloud-3 div a:hover, #recent-comments-3 a:hover {
+background-color: transparent;
+}
+
+#recent-comments-3 ul li, #recent-posts-3 ul li {
+list-style-type: disc;
+color: #2D4F69;
+margin: 0 0 0 2em;
+}
+
+#recent-comments-3 ul li a, #recent-posts-3 ul li a {
+display: block;
+}
+
+/* akismet flickr */
+#akismetwrap {
+width: 200px;
+background: url(images/widget_middle.png) repeat-y;
+}
+
+/* calendar */
+#calendar_wrap {
+width: 200px;
+}
+
+#calendar-3 table {
+background-color: #FFFFFF;
+margin: 0 auto 0 auto;
+line-height: 1em;
+border: 3px double #8C98A1;
+}
+
+#calendar-3 table caption {
+font: bold small-caps 1em "Times New Roman", Times, FreeSerif, serif;
+color: #2D4F69;
+background-color: #BBB3A8;
+padding: 0.5em 0 0.5em 0;
+border-top: 3px double #8C98A1;
+border-left: 3px double #8C98A1;
+border-right: 3px double #8C98A1;
+}
+
+#calendar-3 table th {
+color: #FFFFFF;
+}
+
+#calendar-3 table th, #calendar-3 table td {
+padding: 0.2em;
+border: 1px transparent;
+text-align: center;
+}
+
+#calendar-3 td a {
+margin: 0;
+padding: 0;
+}
+
+#calendar-3 table thead {
+background-color: #8C98A1;
+}
+
+#flickr table {
+margin: 1em auto 1em auto;
+}
+
+/* Specialized tags and shared General Tags */
+div.post {
+border-bottom: 1px dotted #8C98A1;
+padding-bottom: 1em;
+}
+
+.entry-title, .page-title {
+font-family: "Times New Roman", Times, FreeSerif, serif;
+font-variant: small-caps;
+color: #A37B46;
+}
+
+.entry-content {
+overflow-y: auto;
+}
+
+/* comment section */
+.comment-author {
+font: bold small-caps 1em "Times New Roman", Times, FreeSerif, serif;
+}
+
+/*uses Sandbox's comment-author-[name] class function. See readme.html in your sandbox folder */
+div.comments li.comment-author-admin p {
+background-color : #FFFFFF;
+}
+
+.comments p {
+background-color: #BBB3A8;
+color: #2D4F69;
+font-size: 0.8em;
+padding: 1em;
+text-align: justify;
+border: 1px solid #8C98A1;
+}
+
+/* pingbacks */
+.pingback {
+background-color: #BCC7D0;
+}
+/* */
+
+.comment-meta, .comment-metadata {
+font-style: italic;
+color: #A37B46;
+text-indent: 1em;
+}
+
+.comment-meta {
+font-size: 0.8em;
+}
+
+/* comment form */
+.formcontainer {
+border: 1px solid #8C98A1;
+margin-bottom: 1em;
+}
+
+#commentform {
+margin: 1em;
+}
+
+.form-label, form label { 
+font: bold small-caps 1em "Times New Roman", Times, FreeSerif, serif;
+color: #A37B46;
+}
+
+.form-input input, .form-textarea textarea, form input, form textarea {
+background-color: #FFFFFF;
+color: #000000;
+border: 1px solid #8C98A1;
+}
+
+.form-input input:hover, .form-textarea textarea:hover, form input:hover, form textarea:hover {
+background-color: #DEE3E8;
+}
+
+.form-textarea {
+padding-bottom: 1em;
+}
+
+.form-submit {
+text-align: center;
+}
+
+form#commentform span.required {
+background-color: transparent;
+}
+
+.navigation, .skip-link, .entry-meta {
+font-size: 0.8em;
+}
+
+#nav-below {
+padding-bottom: 1em;
+}
+
+.entry-meta {
+padding-top: 1em;
+font-style: italic;
+}
+
+.entry-date {
+font-size: 0.8em;
+font-style: italic;
+color: #A37B46;
+}

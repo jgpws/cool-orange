@@ -1,0 +1,23 @@
+div#access {
+height: 2.5em;
+}
+
+div#menu ul li ul {
+top: 2.5em;
+}
+
+div#menu ul li ul li ul {
+top: 1.5em;
+}
+
+div.sidebar {
+background-color: transparent;
+}
+
+div.sidebar li {
+margin: 0 0 1em 0;
+}
+
+#pages ul, #categories ul, #archives ul, #search ul, #linkcat-2 ul, #rss-links ul, #meta ul, #searchform {
+display: inline-block;
+}
